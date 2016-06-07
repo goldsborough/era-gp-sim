@@ -23,16 +23,16 @@ public:
 
     //Returns a reference to the element at specified location 'index', with bounds checking.
     //If 'index' is not within the range of the container, an exception of type std::out_of_range is thrown.
-    std::vector<bool>::reference at(const int);
+    inline std::vector<bool>::reference at(const int);
     //Returns a reference to the element at specified location 'index', with bounds checking.
     //If 'index' is not within the range of the container, an exception of type std::out_of_range is thrown.
-    std::vector<bool>::const_reference at(const int)const;
+    inline std::vector<bool>::const_reference at(const int)const;
     //Returns a reference to the element at specified location 'index'. No bounds checking is performed.
-    std::vector<bool>::reference operator[](const int);
+    inline std::vector<bool>::reference operator[](const int);
     //Returns a reference to the element at specified location 'index'. No bounds checking is performed.
-    std::vector<bool>::const_reference operator[](const int)const;
+    inline std::vector<bool>::const_reference operator[](const int)const;
     //Toggles each bool in the vector (replaces with its opposite value).
-    void flip();
+    inline void flip();
 private:
     std::vector<bool> data;
 };
