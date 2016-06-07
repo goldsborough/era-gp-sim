@@ -2,11 +2,11 @@
 
 #include <iostream>
 
-Memory::Memory(int length,int width,endian e){
+Memory::Memory(int length,int width,endian endianness){
     std::cout<<length << "; " << width << "; " << std::endl;
 }
 
-Memory::Memory(int length,endian e):Memory(length,8,e){}
+Memory::Memory(int length,endian endianness):Memory(length,8,endianness){}
 
 MemoryValue Memory::get(const int adress, const int length)const{
     return MemoryValue{};
