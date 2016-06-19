@@ -25,11 +25,15 @@ void MemoryValue::flip(){
   _data.flip();
 }
 
-bool MemoryValue::operator==(MemoryValue& second){
+bool MemoryValue::operator==(const MemoryValue& second)const{
   return _data==second._data;
 }
 
 std::ostream& operator<<(std::ostream& stream, const MemoryValue& value){
   for(bool b:value._data)if(b)stream<<'1';else stream<<'0';
   return stream;
+}
+
+int MemoryValue::size()const{
+  return _data.size();
 }
