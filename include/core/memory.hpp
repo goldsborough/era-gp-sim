@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "memoryvalue.hpp"
+#include "memoryarray.hpp"
 //typedef std::vector<bool> MemoryValue;//This WILL create bugs
 
 enum class endian{kLittleEndian,kBigEndian};
@@ -25,7 +26,16 @@ public:
   MemoryValue get(const int adress, const int length=1)const;
   //Sets the value of the memory cells after the memory cell at 'adress' to
   //'value'
-  void set(const int adress,const MemoryValue& value);
+  void put(const int adress,const MemoryValue& value);
+  //Sets the value of the memory cells after the memory cell at 'adress' to
+  //'value' and returns its previous value
+  MemoryValue set(const int adress,const MemoryValue& value);
+private:
+  const endian _endianness;
+  const int _length;
+  const int _width;
+  const int _byteLength;
+  MemoryArray _memoryArray;
 };
 
 #endif // ERAGPSIM_CORE_MEMORY_H
