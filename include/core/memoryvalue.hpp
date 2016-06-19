@@ -4,6 +4,7 @@
 #include <vector>
 #include <iostream>
 
+//Set of bits for in/out-putting to/from memory/registers
 class MemoryValue{
 public:
   //Creates a MemoryValue of width 'width' (default=8)
@@ -39,9 +40,10 @@ public:
   std::vector<bool>::const_reference operator[](const int index)const;
   //Toggles each bool in the vector (replaces with its opposite value).
   void flip();
+  int size()const;
 
   //returns true iff second._data==this->_data
-  bool operator==(MemoryValue&);
+  bool operator==(const MemoryValue&)const;
   //puts a binary representation of 'this Memory Value'value' into the ostream
   friend std::ostream& operator<<(std::ostream& stream,
                                   const MemoryValue& value);
